@@ -1,11 +1,14 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import TimeContext from '../Context/SecondsContext';
 
 function Slider() {
-  const {timing, updateTiming} = useContext(TimeContext);
+  const [Time, setTime] = useState(4)
+  const {updateTiming} = useContext(TimeContext)
 
   const handleChange = (event) => {
-    updateTiming(parseInt(event.target.value));
+    const newTime = parseInt(event.target.value);
+    setTime(newTime);
+    updateTiming(newTime)
   };
 
   return (
@@ -15,10 +18,10 @@ function Slider() {
         min={1}
         max={30}
         step={1}
-        value={value}
+        value={Time}
         onChange={handleChange}
       />
-      <p>{timing} Seconds </p>
+      <p>{Time} Seconds </p>
     </div>
   );
 }

@@ -1,7 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import Slider from '../Components/Slider';
 
-
 function HomePage() {
     let navigate = useNavigate();
     
@@ -10,18 +9,13 @@ function HomePage() {
     };
     
     return (
-      <>
-        <h1>Good To Have You Back</h1>
-
-        <p>How long can you go?</p>
+      <div className="home-container">
+        <h1 className="heading">Good To Have You Back</h1>
+        <p className="subheading">How long can you go?</p>
         <Slider />
-
-
-        <button onClick={handleStartClick}>Start</button>
-        
-        <button>Settings</button>
-        
-      </>
+        <button className="start-button" onClick={handleStartClick}>Start</button>
+        <button className="settings-button">Settings</button>
+      </div>
     );
   }
 

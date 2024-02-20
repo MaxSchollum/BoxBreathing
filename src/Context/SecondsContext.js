@@ -7,7 +7,7 @@ export const TimeProvider = ({children}) => {
 
     const updateTiming = (newValue) => {
     setTiming(newValue)
-    console.log(newValue)
+    // console.log(newValue)
     }
 
     return(

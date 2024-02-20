@@ -1,3 +1,4 @@
+/* Reset CSS */
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,6 +6,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: black;
 }
 
 code {
@@ -12,6 +14,7 @@ code {
     monospace;
 }
 
+/* Main container */
 .container {
   display: flex;
   flex-direction: column;
@@ -22,50 +25,17 @@ code {
   overflow: hidden;
 }
 
+/* Text styles */
 .text {
   margin-bottom: 20px;
   font-size: 24px;
 }
 
-.image {
-  transition: transform 5s ease; /* Match the transition time to your setTimeout duration */
-}
-
-.stage-1 {
-  animation: growImage 5s forwards; /* Adjust animation duration to 5 seconds */
-}
-
-@keyframes growImage {
-  from {
-    transform: scale(0.5);
-  }
-  to {
-    transform: scale(1);
-  }
-}
-
-.stage-2 {
-  transform: scale(1); /* Keep the image at scale 1 */
-}
-
-.stage-3 {
-  animation: shrinkImage 5s forwards; /* Add shrink animation for transitioning to stage 3 */
-}
-
-@keyframes shrinkImage {
-  from {
-    transform: scale(1);
-  }
-  to {
-    transform: scale(0.5);
-  }
-}
-
 .stage-4 {
-  transform: scale(0.5); /* Keep the image at scale 0.5 */
+  transform: scale(0.5);
 }
 
-
+/* Header styles */
 header {
   height: 70px;
   width: 100%;
@@ -73,4 +43,40 @@ header {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 30px;
+}
+
+/* HomePage specific styles */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: black; /* Dark soothing background */
+  color: #b0bec5; /* Soothing pastel color for text */
+  font-family: 'Roboto', sans-serif; /* Relaxing, comfortable font */
+}
+
+.heading {
+  font-size: 2.5rem; /* Adequate sizing for heading */
+  margin-bottom: 20px; /* Margin for spacing */
+}
+
+.subheading {
+  font-size: 1.5rem; /* Adequate sizing for subheading */
+  margin-bottom: 20px; /* Margin for spacing */
+}
+
+.start-button, .settings-button {
+  background-color: #64b5f6; /* Button background color */
+  color: #fff; /* Button text color */
+  border: none; /* Remove button border */
+  padding: 10px 20px; /* Padding for button */
+  font-size: 1rem; /* Adequate sizing for button text */
+  cursor: pointer; /* Cursor style */
+  margin-bottom: 10px; /* Margin for spacing */
+}
+
+.start-button:hover, .settings-button:hover {
+  background-color: #2196f3; /* Button background color on hover */
 }
