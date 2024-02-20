@@ -3,9 +3,9 @@
 
 function Header() {
   return (
-      <header style={{backgroundColor: 'black'}}>
+      <header className="Header">
         <div className="container">
-            <h2 style={{color: "white"}}>Box Breathing</h2>
+            <h2 className="text">Box Breathing</h2>
         </div>
       </header>
   )

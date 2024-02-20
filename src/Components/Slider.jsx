@@ -12,7 +12,7 @@ function Slider() {
   };
 
   return (
-    <div>
+    <div className="slider-container">
       <input
         type="range"
         min={1}
@@ -20,8 +20,9 @@ function Slider() {
         step={1}
         value={Time}
         onChange={handleChange}
+        className="slider"
       />
-      <p>{Time} Seconds </p>
+      <p className='text'>{Time} Seconds </p>
     </div>
   );
 }

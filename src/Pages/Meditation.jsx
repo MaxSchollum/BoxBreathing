@@ -7,26 +7,28 @@ function Meditation() {
   const {timing} = useContext(TimeContext)
   const seconds = timing*1000
   const durationSeconds = timing; // Assuming 'timing' is in seconds
+  const [remainingTime, setRemainingTime] = useState(timing)
 
   const dynamicStyleGrow = {
-    transition: `transform ${durationSeconds}s ease`, // Dynamic transition duration
-    animation: `growImage ${durationSeconds}s forwards`, // Dynamic animation for growing
+    transition: `transform ${durationSeconds}s cubic-bezier(0.4, 0, 0.2, 1)`, // Dynamic transition with custom timing function
+    animation: `growImage ${durationSeconds}s forwards cubic-bezier(0.4, 0, 0.2, 1)`, // Dynamic animation with custom timing function
   };
-
+  
   const dynamicStyleShrink = {
-    transition: `transform ${durationSeconds}s ease`, // Dynamic transition duration
-    animation: `shrinkImage ${durationSeconds}s forwards`, // Dynamic animation for shrinking
-  } 
+    transition: `transform ${durationSeconds}s cubic-bezier(0.4, 0, 0.2, 1)`, // Dynamic transition with custom timing function
+    animation: `shrinkImage ${durationSeconds}s forwards cubic-bezier(0.4, 0, 0.2, 1)`, // Dynamic animation with custom timing function
+  };
+  
 
   const dynamicKeyframes = `
     @keyframes growImage {
-      from { transform: scale(0.5); }
+      from { transform: scale(0.2); }
       to { transform: scale(1); }
     }
     
     @keyframes shrinkImage {
       from { transform: scale(1); }
-      to { transform: scale(0.5); }
+      to { transform: scale(0.2); }
     }
   `;
 
@@ -42,7 +44,19 @@ function Meditation() {
     }
   }  
 
+  // var countDown = () => {
+  //   if (remainingTime > 0) {
+  //     const timer = setTimeout(() => setRemainingTime(remainingTime - 1), 1000);
+  //     return () => clearTimeout(timer);
+  //   } else {
+  //     // Reset remaining time when it reaches 0
+  //     setRemainingTime(timing);
+  // }
+  // }
 
+  // useEffect(() => {
+  //   countDown(); // Call countDown function here
+  // });
 
   useEffect(() => {
     let timer1;
@@ -68,12 +82,13 @@ function Meditation() {
     };
   }, [stage]);
 
+
   return (
     <>
       <style>{dynamicKeyframes}</style>
       <div className="container">
-        <div className="text" style={{backgroundColor: "red", color: "white", position: 'relative', zIndex: 1000}}>
-          {textToDisplay()} {stage}, {timing}</div>
+        <div className="text" style={{position: 'relative', zIndex: 1000}}>
+          {textToDisplay()}</div>
         <img
           src={pic}
           alt="Meditation"

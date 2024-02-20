@@ -27,12 +27,17 @@ code {
 
 /* Text styles */
 .text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   margin-bottom: 20px;
   font-size: 24px;
+  color: #b0bec5
 }
 
 .stage-4 {
-  transform: scale(0.5);
+  transform: scale(0.2);
 }
 
 /* Header styles */
@@ -57,26 +62,77 @@ header {
   font-family: 'Roboto', sans-serif; /* Relaxing, comfortable font */
 }
 
-.heading {
-  font-size: 2.5rem; /* Adequate sizing for heading */
+.heading, .heading_late{
+  font-size: 3rem; /* Larger font size for heading */
   margin-bottom: 20px; /* Margin for spacing */
+  font-weight: normal; /* Make font weight normal */
+}
+
+@keyframes fadeFromBlack {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+.heading_late {
+  opacity: 0;
+  animation: fadeFromBlack 3s ease 1s forwards
 }
 
 .subheading {
-  font-size: 1.5rem; /* Adequate sizing for subheading */
+  font-size: 2rem; /* Larger font size for subheading */
   margin-bottom: 20px; /* Margin for spacing */
+  font-weight: normal; /* Make font weight normal */
 }
 
 .start-button, .settings-button {
-  background-color: #64b5f6; /* Button background color */
-  color: #fff; /* Button text color */
-  border: none; /* Remove button border */
-  padding: 10px 20px; /* Padding for button */
-  font-size: 1rem; /* Adequate sizing for button text */
+  background-color: black; /* Button background color */
+  color: #b0bec5; /* Button text color */
+  border-radius: 25px; /* Remove button border */
+  border: none;
+  padding: 15px 25px; /* Increase padding for button */
+  font-size: 1.5rem; /* Larger font size for button text */
   cursor: pointer; /* Cursor style */
   margin-bottom: 10px; /* Margin for spacing */
+  transition: background-color 0.4s ease, box-shadow 0.5s ease; /* Transition effect */
 }
 
 .start-button:hover, .settings-button:hover {
-  background-color: #2196f3; /* Button background color on hover */
+  background-color: #313131; /* Button background color on hover */
+}
+
+
+/* Slider styles */
+.slider-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.slider {
+  width: 150%; /* Adjust width as needed */
+  height: 50px; /* Set the height */
+  background: #b0bec5; /* Slider track color */
+  outline: none; /* Remove default styles */
+  opacity: 0.7; /* Set the opacity */
+  border-radius: 10px; /* Set the border-radius */
+  margin: 20px; /* Margin for spacing */
+}
+
+.slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px; /* Set the width of the thumb */
+  height: 20px; /* Set the height of the thumb */
+  background: #fff; /* Thumb color */
+  cursor: pointer; /* Set cursor to pointer */
+  border-radius: 50%; /* Make the thumb round */
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5); /* Add a shadow to the thumb */
+}
+
+.slider::-moz-range-thumb {
+  width: 20px; /* Set the width of the thumb */
+  height: 40px; /* Set the height of the thumb */
+  background: #fff; /* Thumb color */
+  cursor: pointer; /* Set cursor to pointer */
+  border-radius: 50%; /* Make the thumb round */
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5); /* Add a shadow to the thumb */
 }
