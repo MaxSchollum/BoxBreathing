@@ -7,7 +7,7 @@ function Meditation() {
   const {timing} = useContext(TimeContext)
   const seconds = timing*1000
   const durationSeconds = timing; // Assuming 'timing' is in seconds
-  const [remainingTime, setRemainingTime] = useState(timing)
+  // const [remainingTime, setRemainingTime] = useState(timing)
 
   const dynamicStyleGrow = {
     transition: `transform ${durationSeconds}s cubic-bezier(0.4, 0, 0.2, 1)`, // Dynamic transition with custom timing function
@@ -80,7 +80,7 @@ function Meditation() {
       clearTimeout(timer3);
       clearTimeout(timer4);
     };
-  }, [stage]);
+  }, [stage, seconds]);
 
 
   return (
