@@ -9,9 +9,9 @@ function App() {
   return (
     <TimeProvider>
     <Router>
-    <div>
+    <div className="container">
         <Header />
-            <div className="Container">
+            <div >
               <Routes>
                 <Route exact path="/" element={<HomePage />} />
                   <Route path="/med" element={<Meditation />}/>

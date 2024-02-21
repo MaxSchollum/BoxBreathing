@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useContext } from 'react';
-import pic from '../Assets/Meditation Pic.jpeg'
+import pic from '../Assets/Meditation Pic.png'
 import TimeContext from '../Context/SecondsContext';
+import gongSound1 from '../Assets/Bell 1 Cut.mp3'
+import gongSound2 from '../Assets/Bell 2 Cut.mp3'
 
 function Meditation() {
   const [stage, setStage] = useState(1);
@@ -44,19 +46,69 @@ function Meditation() {
     }
   }  
 
-  // var countDown = () => {
-  //   if (remainingTime > 0) {
-  //     const timer = setTimeout(() => setRemainingTime(remainingTime - 1), 1000);
-  //     return () => clearTimeout(timer);
-  //   } else {
-  //     // Reset remaining time when it reaches 0
-  //     setRemainingTime(timing);
-  // }
-  // }
+  const [playSound1, setPlaySound1] = useState(false)
+  const [playSound2, setPlaySound2] = useState(false)
+  const gong1 = new Audio(gongSound1)
+  const gong2 = new Audio(gongSound2)
 
-  // useEffect(() => {
-  //   countDown(); // Call countDown function here
-  // });
+  useEffect(() => {
+    if (stage === 1) {
+      gong1.play();
+    } else if (stage === 2) {
+      gong1.pause();
+      gong1.currentTime = 0;
+    } else if (stage === 3) {
+      gong2.play();
+    } else if (stage === 4) {
+      gong2.pause();
+      gong2.currentTime = 0
+    }
+  }, [stage]);
+
+// OLD
+    // useEffect(() => {
+    //   if (stage === 1) {
+    //     setPlaySound1(true)
+    //   } else {
+    //     setPlaySound1(false)
+    //   }
+    // }, [stage])
+
+    // useEffect (() => {
+    //   if (playSound1) {
+    //     // gong2.pause()
+    //     gong1.play()
+    //   }
+    // }, [playSound1])
+
+    // useEffect(() => {
+    //   if (stage === 3) {
+    //     setPlaySound2(true)
+    //   } else {
+    //     setPlaySound2(false)
+    //   }
+    // }, [stage])
+
+    // useEffect (() => {
+    //   if (playSound2) {
+    //     // gong1.pause()
+    //     gong2.play()
+    //   }
+    // }, [playSound2])
+
+    // var countDown = () => {
+    //   if (remainingTime > 0) {
+    //     const timer = setTimeout(() => setRemainingTime(remainingTime - 1), 1000);
+    //     return () => clearTimeout(timer);
+    //   } else {
+    //     // Reset remaining time when it reaches 0
+    //     setRemainingTime(timing);
+    // }
+    // }
+
+    // useEffect(() => {
+    //   countDown(); // Call countDown function here
+    // });
 
   useEffect(() => {
     let timer1;
