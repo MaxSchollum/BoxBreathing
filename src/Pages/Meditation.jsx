@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useContext } from 'react';
-import pic from '../Assets/Meditation Pic.png'
 import TimeContext from '../Context/SecondsContext';
 import gongSound1 from '../Assets/Bell 1 Cut.mp3'
 import gongSound2 from '../Assets/Bell 2 Cut.mp3'
+import ResponsiveImage from '../Components/ImageResize';
 
 function Meditation() {
   const [stage, setStage] = useState(1);
@@ -96,13 +96,13 @@ function Meditation() {
         <div className="breathetext" style={{position: 'relative', zIndex: 1000}}>
           {textToDisplay()}
         </div>
-        <div className='med-img'>
-          <img
-            src={pic}
+        <div className='med-img-container'>
+          <div className='med-img'
             alt="Meditation"
             className={`image stage-${stage}`}
-            style={stage === 1 ? dynamicStyleGrow : stage === 3 ? dynamicStyleShrink : null}
-          />
+            style={stage === 1 ? dynamicStyleGrow : stage === 3 ? dynamicStyleShrink : null}>
+            <ResponsiveImage/>
+          </div>
         </div>
       </div>
     </>

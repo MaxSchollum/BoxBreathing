@@ -25,12 +25,18 @@ code {
   overflow: hidden;
 }
 
+@media (max-width: 480px) {
+  .main-container {
+    overflow: auto;
+  }
+}
+
 .no-header-container {
   display: flex;
   flex-grow: 1;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 
 .text-image-container {
@@ -41,13 +47,22 @@ code {
   justify-content: center;
 }
 
-.med-img {
+.med-img-container {
   display: flex;
   flex-grow: 1;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
+
+/* .med-img {
+  width: ;
+  height: ;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
 
 /* Text styles */
 .text {
@@ -58,6 +73,14 @@ code {
   font-size: 24px;
   color: #b0bec5;
   font-weight: 600;
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  .text{
+    font-size: 12px;
+    font-weight: 400;
+  }
 }
 
 .breathetext {
@@ -71,6 +94,13 @@ code {
   margin-top: 10px;
   display: flex;
   width: 100%
+}
+
+@media (max-width: 480px) {
+  .breathetext{
+    font-size: 16px;
+    font-weight: 600;
+  }
 }
 
 
@@ -99,6 +129,13 @@ header {
   font-weight: 600;
 }
 
+@media (max-width: 480px) {
+  .header-text{
+    font-size: 12px;
+    font-weight: 600;
+  }
+}
+
 /* HomePage specific styles */
 .home-container {
   display: flex;
@@ -111,9 +148,10 @@ header {
 }
 
 .heading, .heading_late{
-  font-size: 3rem; /* Larger font size for heading */
-  margin-bottom: 20px; /* Margin for spacing */
-  font-weight: 600; /* Make font weight normal */
+  font-size: 3rem;
+  margin-bottom: 20px;
+  font-weight: 600;
+  text-align: center;
 }
 
 @keyframes fadeFromBlack {
@@ -127,9 +165,16 @@ header {
 }
 
 .subheading {
-  font-size: 2rem; /* Larger font size for subheading */
-  margin-bottom: 20px; /* Margin for spacing */
-  font-weight: 600; /* Make font weight normal */
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-weight: 600; 
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  .heading, .subheading, .heading_late{
+    font-size: 16px;
+  }
 }
 
 .start-button, .settings-button {
@@ -149,6 +194,13 @@ header {
   background-color: #313131; /* Button background color on hover */
 }
 
+@media (max-width: 480px) {
+  .start-button, .settings-button{
+    font-size: 12px;
+    font-weight: 400;
+  }
+}
+
 
 /* Slider styles */
 .slider-container {
@@ -165,6 +217,13 @@ header {
   opacity: 0.7; /* Set the opacity */
   border-radius: 10px; /* Set the border-radius */
   margin: 20px; /* Margin for spacing */
+}
+
+@media (max-width: 480px) {
+  .slider{
+    width: 150px; /* Adjust width as needed */
+  height: 25px;
+  }
 }
 
 .slider::-webkit-slider-thumb {
