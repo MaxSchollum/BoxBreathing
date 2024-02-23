@@ -92,14 +92,14 @@ function Meditation() {
   return (
     <>
       <style>{dynamicKeyframes}</style>
-      <div className="container">
+      <div className="text-breathe-container">
         <div className="breathetext" style={{position: 'relative', zIndex: 1000}}>
           {textToDisplay()}
         </div>
         <div className='med-img-container'>
-          <div className='med-img'
+          <div  
+            className={`med-img image stage-${stage}`}
             alt="Meditation"
-            className={`image stage-${stage}`}
             style={stage === 1 ? dynamicStyleGrow : stage === 3 ? dynamicStyleShrink : null}>
             <ResponsiveImage/>
           </div>

@@ -55,6 +55,12 @@ code {
   justify-content: center;
 }
 
+.text-breathe-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
 /* .med-img {
   width: ;
   height: ;

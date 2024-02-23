@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import smallImage from '../Assets/Meditation Pic450.png';
-import largeImage from '../Assets/Meditation Pic900.png';
+import largeImage from '../Assets/Meditation Pic800.png';
 
 function ResponsiveImage() {
   const [currentImage, setCurrentImage] = useState(getImageSrc(window.innerWidth));
