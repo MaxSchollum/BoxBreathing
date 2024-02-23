@@ -1,0 +1,44 @@
+// OLD
+    // useEffect(() => {
+    //   if (stage === 1) {
+    //     setPlaySound1(true)
+    //   } else {
+    //     setPlaySound1(false)
+    //   }
+    // }, [stage])
+
+    // useEffect (() => {
+    //   if (playSound1) {
+    //     // gong2.pause()
+    //     gong1.play()
+    //   }
+    // }, [playSound1])
+
+    // useEffect(() => {
+    //   if (stage === 3) {
+    //     setPlaySound2(true)
+    //   } else {
+    //     setPlaySound2(false)
+    //   }
+    // }, [stage])
+
+    // useEffect (() => {
+    //   if (playSound2) {
+    //     // gong1.pause()
+    //     gong2.play()
+    //   }
+    // }, [playSound2])
+
+    // var countDown = () => {
+    //   if (remainingTime > 0) {
+    //     const timer = setTimeout(() => setRemainingTime(remainingTime - 1), 1000);
+    //     return () => clearTimeout(timer);
+    //   } else {
+    //     // Reset remaining time when it reaches 0
+    //     setRemainingTime(timing);
+    // }
+    // }
+
+    // useEffect(() => {
+    //   countDown(); // Call countDown function here
+    // });

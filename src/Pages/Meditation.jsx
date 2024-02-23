@@ -8,8 +8,7 @@ function Meditation() {
   const [stage, setStage] = useState(1);
   const {timing} = useContext(TimeContext)
   const seconds = timing*1000
-  const durationSeconds = timing; // Assuming 'timing' is in seconds
-  // const [remainingTime, setRemainingTime] = useState(timing)
+  const durationSeconds = timing;
 
   const dynamicStyleGrow = {
     transition: `transform ${durationSeconds}s cubic-bezier(0.4, 0, 0.2, 1)`, // Dynamic transition with custom timing function
@@ -65,51 +64,6 @@ function Meditation() {
     }
   }, [stage]);
 
-// OLD
-    // useEffect(() => {
-    //   if (stage === 1) {
-    //     setPlaySound1(true)
-    //   } else {
-    //     setPlaySound1(false)
-    //   }
-    // }, [stage])
-
-    // useEffect (() => {
-    //   if (playSound1) {
-    //     // gong2.pause()
-    //     gong1.play()
-    //   }
-    // }, [playSound1])
-
-    // useEffect(() => {
-    //   if (stage === 3) {
-    //     setPlaySound2(true)
-    //   } else {
-    //     setPlaySound2(false)
-    //   }
-    // }, [stage])
-
-    // useEffect (() => {
-    //   if (playSound2) {
-    //     // gong1.pause()
-    //     gong2.play()
-    //   }
-    // }, [playSound2])
-
-    // var countDown = () => {
-    //   if (remainingTime > 0) {
-    //     const timer = setTimeout(() => setRemainingTime(remainingTime - 1), 1000);
-    //     return () => clearTimeout(timer);
-    //   } else {
-    //     // Reset remaining time when it reaches 0
-    //     setRemainingTime(timing);
-    // }
-    // }
-
-    // useEffect(() => {
-    //   countDown(); // Call countDown function here
-    // });
-
   useEffect(() => {
     let timer1;
     let timer2;
@@ -139,14 +93,17 @@ function Meditation() {
     <>
       <style>{dynamicKeyframes}</style>
       <div className="container">
-        <div className="text" style={{position: 'relative', zIndex: 1000}}>
-          {textToDisplay()}</div>
-        <img
-          src={pic}
-          alt="Meditation"
-          className={`image stage-${stage}`}
-          style={stage === 1 ? dynamicStyleGrow : stage === 3 ? dynamicStyleShrink : null}
-        />
+        <div className="breathetext" style={{position: 'relative', zIndex: 1000}}>
+          {textToDisplay()}
+        </div>
+        <div className='med-img'>
+          <img
+            src={pic}
+            alt="Meditation"
+            className={`image stage-${stage}`}
+            style={stage === 1 ? dynamicStyleGrow : stage === 3 ? dynamicStyleShrink : null}
+          />
+        </div>
       </div>
     </>
   );
